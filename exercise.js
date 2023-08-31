@@ -1,6 +1,6 @@
-1; //
-/*  Write a code to display the multiplication table of a given integer.
-example : number 9 */
+// 1; //
+// /*  Write a code to display the multiplication table of a given integer.
+// example : number 9 */
 
 // let num = 10;
 // let times = 9;
@@ -10,10 +10,10 @@ example : number 9 */
 //   console.log(`${times} X ${i} = ${output}`);
 // }
 
-2; //
-/// Write a code to check whether a string is a palindrome or not
+// 2; //
+// /// Write a code to check whether a string is a palindrome or not
 
-// let str = "babeh";
+// let str = "kasur rusak";
 // let balik = "";
 
 // for (let i = str.length - 1; i >= 0; i--) {
@@ -26,14 +26,35 @@ example : number 9 */
 //   console.log("ini bukan palindrome");
 // }
 
-// let str = "ujang";
-// if (str === str.split("").reverse().join("")) {
-//   console.log(`ini adalah palindrome`);
-// } else {
-//   console.log(` ini bukan palindrome`);
+// 3; //
+// let c = 10;
+// let k = c / 100000;
+// console.log(`${c} centimeter di convert ke kilometer adalah ${k} kilometer`);
+
+// let input = "LuThFi AL FinnEgaN";
+
+// let newInput = "";
+
+// for (let i = 0; i < input.length; i++) {
+//   if (input[i] == input[i].toUpperCase()) {
+//     newInput += input[i].toLowerCase();
+//   } else {
+//     newInput += input[i].toUpperCase();
+//   }
+// }
+// console.log(newInput);
+
+// let input = "luthfi";
+// let output = "";
+
+// for (let i = input.length - 1; i >= 0; i--) {
+//   output += input[i];
 // }
 
-3; //
-let c = 10;
-let k = c / 100000;
-console.log(`${c} centimeter di convert ke kilometer adalah ${k} kilometer`);
+// console.log(output);
+
+// let input = "Adsjhasjdhg";
+
+// let newInput = input.toLowerCase("").replaceAll("a", "*");
+
+// console.log(newInput);
