@@ -1,90 +1,74 @@
-/* 
-1. buat function konversi ke template phonenumber (xxx-xxx-xxx)
+/*  exercise 1 
+    create a function
+        input: "pig latin is cool !"
+        return: "igPay atinLay Siay oolcay !ay"
 
-example -> "123456789" - "123-456-789"
-
-2. buat class train 
-    - masinis duduk paling depan 
-    - maksimal 10 penumpang 
-    - tidak boleh ada penumpang dengan nama penumpang yang sama
-    - penumpang mengisi urutan kursi dari depn berurutan
-    - penumpang bisa keluar kereta 
-    - penumpang baru, mengisi kursi kosong terlebig dahulu sebelum kusrsi ke kebalakang
+    exercise 4
+    dataSensor = ["anjing","babi"]
+    input: "budi memberi makan anjing"
+    output: "budi memberi makan a****g"
 */
 
 // 1 //
-let number = "081289614450";
-function convert(number) {
-  let arr = number.split("");
-  let res = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (res.length == 4 || res.length == 9) {
-      res.push("-");
-      i--;
-    } else {
-      res.push(arr[i]);
-    }
-  }
-  return res.join("");
-}
-// console.log(convert(number));
+// const thai = (str) => {
+//   return str
+//     .split(" ")
+//     .map((kata) => {
+//       return kata.slice(1) + kata[0] + "ay";
+//     })
+//     .join(" ");
+// };
+// console.log(thai("pig latin is cool !"));
+
+// const thai = (str) => {
+//   let arr = str.split(" ");
+//   let res = [];
+//   for (let word of arr) {
+//     let modified = word.slice(1) + word[0] + "ay";
+//     res.push(modified);
+//   }
+//   return res.join(" ");
+// };
+// console.log(thai("pig latin is cool !"));
 
 // 2 //
+// const thai = (str) => {
+//   let arr = str.split(" ");
+//   let res = [];
+//   for (let word of arr) {
+//     if (/^[aiueo]/.test(word)) {
+//       let modified = word.slice(1) + word[0] + "way";
+//       res.push(modified);
+//     } else {
+//       let modified = word.slice(1) + word[0] + "ay";
+//       res.push(modified);
+//     }
+//   }
+//   return res.join(" ");
+// };
+// console.log(thai("igpay atinlay siway oolcay !ay"));
 
-class Train {
-  kursi = [
-    "Masinis",
-    undefined,
-    "Hidayat",
-    undefined,
-    "Luthfi",
-    "Reyhan",
-    undefined,
-    undefined,
-    "Hafiz",
-    "Agna",
-  ];
+// 3 //
+// const thai2 = (str) => {
+//   let cleaned = str.replaceAll("way", "").replaceAll("ay", "").split(" ");
+//   let res = [];
+//   for (let word of cleaned) {
+//     let modified = word[word.length - 1] + word.slice(0, word.length - 1);
+//     res.push(modified);
+//   }
+//   return res.join(" ");
+// };
+// console.log(thai2("igpay atinlay siway oolcay !ay"));
 
-  tambahPenumpang(nama, kursi, maximal = 11) {
-    if (this.kursi.length == 0) {
-      this.kursi.push(nama);
-      return this.kursi;
-    } else {
-      for (let i = 0; i < this.kursi.length; i++) {
-        if (this.kursi[i] == undefined) {
-          this.kursi[i] = nama;
-          return this.kursi;
-        } else if (this.kursi.length >= maximal) {
-          console.log("penuh bang,cari kereta lain aja");
-          return this.kursi;
-        } else if (this.kursi[i] == nama) {
-          console.log(`${nama} sudah ada di dalam kereta bang`);
-          return this.nama;
-        } else if (i == this.kursi.length - 1) {
-          this.kursi.push(nama);
-          return this.kursi;
-        }
-      }
-    }
-  }
-
-  buangPenumpang(nama, kursi) {
-    for (let i = this.kursi.length - 1; i > 0; i--) {
-      if (this.kursi[i] == nama) {
-        this.kursi[i] = undefined;
-        return this.kursi;
-      }
-    }
-  }
-}
-
-let train = new Train();
-train.tambahPenumpang("Aman", []);
-train.tambahPenumpang("Aman", []);
-train.tambahPenumpang("Ezra", []);
-train.tambahPenumpang("Thoby", []);
-train.tambahPenumpang("Mas Ilham", []);
-train.tambahPenumpang("Andre", []);
-train.tambahPenumpang("Joni", []);
-
-console.log(train.kursi);
+// 4 //
+// const bualan = (umpatan) => {
+//   const censoredWord = ["anjing", "babi"];
+//   let res = umpatan;
+//   for (const word of censoredWord) {
+//     let cencored =
+//       word[0] + "*".repeat(word.length - 2) + word[word.length - 1];
+//     res = res.replaceAll(word, cencored);
+//   }
+//   return res;
+// };
+// console.log(bualan("budi memberi makan anjing"));
